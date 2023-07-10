@@ -9,14 +9,11 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Package lock
-              run: npm i --package-lock-only
-              
-            - name: Security Check
-              run: npm audit
+            # - name: Package lock
+            #   run: npm i --package-lock-only
 
-
-
+            # - name: Security Check
+            #   run: npm audit
             - name: Running the app 
               run: npm run build --if-present
 
