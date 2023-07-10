@@ -19,9 +19,9 @@ jobs:
 
             - name: Dependency install
               run: npm install --force 
-              
+
             - name: CI
-              run: npm ci
+              run: npm ci --force 
 
             - name: Running the app 
               run: npm run build
