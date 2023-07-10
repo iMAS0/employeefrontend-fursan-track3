@@ -15,7 +15,7 @@ jobs:
             # - name: Security Check
             #   run: npm audit
             - name: Running the app 
-              run: npm run build --if-present
+              run: npm run build 
 
             
 
