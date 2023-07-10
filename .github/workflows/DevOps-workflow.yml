@@ -18,7 +18,7 @@ jobs:
                 node-version: 18.x
 
             - name: Dependency install
-              run: npm install
+              run: npm ci
 
             - name: Running the app 
               run: npm run build 
