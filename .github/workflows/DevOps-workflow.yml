@@ -9,12 +9,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - name: Build Step 1
-              run: echo "Build Step 1"
+            - name: Security Check
+              run: npm audit
 
 
-            - name: Build Step 2
-              run: echo "Build Step 2"
+            - name: Running the app 
+              run: npm run build --if-present
 
             
 
