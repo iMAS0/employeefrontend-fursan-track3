@@ -18,8 +18,8 @@ jobs:
                 node-version: 18.x
 
             - name: Dependency install
-              run: npm install
-
+              run: npm install --force 
+              
             - name: CI
               run: npm ci
 
