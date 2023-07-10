@@ -17,6 +17,9 @@ jobs:
               with:
                 node-version: 18.x
 
+            - name: Dependency install
+              run: npm install
+
             - name: CI
               run: npm ci
 
