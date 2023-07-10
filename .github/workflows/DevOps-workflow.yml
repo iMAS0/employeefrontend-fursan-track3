@@ -18,10 +18,10 @@ jobs:
                 node-version: '18'
 
             - name: Dependency install
-              run: npm install --force
+              run: npm clean-install
 
             - name: CI
-              run: npm ci --force
+              run: npm ci 
 
             - name: Running the app 
               run: npm run build
