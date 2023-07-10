@@ -6,7 +6,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    build:
+    sonar_check:
         runs-on: ubuntu-latest
         steps:
             - name: Download files from the current repository
@@ -16,15 +16,17 @@ jobs:
               uses: actions/setup-node@v3.7.0
               with:
                 node-version: '18'
-
-            - name: Dependency install
-              run: npm install
-
-            - name: CI
-              run: npm ci 
-
-            - name: Running the app 
-              run: npm run build
+            - name: SonarCloud Scan
+              uses: sonarsource/sonarcloud-github-action@master
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+              with:
+                args: > 
+                  -Dsonar.organization=imas0        
+                  -Dsonar.projectKey=iMAS0_employeefrontend-fursan-track3          
+                  -Dsonar.sources=            
+                  -Dsonar.host.url=http://sonarcloud.io
 
             
 
