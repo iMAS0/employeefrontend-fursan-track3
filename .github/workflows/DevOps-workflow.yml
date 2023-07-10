@@ -12,6 +12,11 @@ jobs:
             - name: Download files from the current repository
               uses: actions/checkout@v2
 
+            - name: Use Node.js 12.x
+              uses: actions/setup-node@v1
+              with:
+                node-version: 18.x
+
             - name: Dependency install
               run: npm install
 
