@@ -9,8 +9,8 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            # - name: Package lock
-            #   run: npm i --package-lock-only
+            - name: Download files from the current repository
+              uses: actions/checkout@v2
 
             - name: Dependency install
               run: npm install
