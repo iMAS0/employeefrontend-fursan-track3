@@ -12,8 +12,9 @@ jobs:
             # - name: Package lock
             #   run: npm i --package-lock-only
 
-            # - name: Security Check
-            #   run: npm audit
+            - name: Dependency install
+              run: npm install
+
             - name: Running the app 
               run: npm run build 
 
