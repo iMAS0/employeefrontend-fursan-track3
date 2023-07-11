@@ -31,6 +31,15 @@ jobs:
                   -Dsonar.projectKey=iMAS0_employeefrontend-fursan-track3          
                   -Dsonar.sources=            
                   -Dsonar.host.url=http://sonarcloud.io
-
+    scan:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: install dependencies
+              run: npm ci
+            - uses: oke-py/npm-audit-action@v3
+              with:
+                  json_flag: true
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
             
 
