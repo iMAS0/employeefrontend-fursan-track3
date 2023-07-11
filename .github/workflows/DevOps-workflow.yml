@@ -52,6 +52,27 @@ jobs:
               with:
                 name: audit
                 path: audit.json
+    retire-scan:
+          runs-on: ubuntu-latest
+          steps:
+              - name: Download files from the current repository
+                uses: actions/checkout@v3.5.3
+              - name: Use Node.js 18.x
+                uses: actions/setup-node@v3.7.0
+                with:
+                    node-version: '18'
+                          
+              - uses: actions/checkout@v3
+              - name: install dependencies
+                run: npm install
+          
+              - name: npm audit
+                run: retire --outputformat json > retire.json
+                continue-on-error: true
+              - uses: actions/upload-artifact@v3
+                with:
+                  name: retire
+                  path: retire.json
             
             
 
