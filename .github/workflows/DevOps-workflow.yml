@@ -44,7 +44,7 @@ jobs:
               run: npm ci
 
             - name: npm audit
-            - uses: oke-py/npm-audit-action@v2
+              uses: oke-py/npm-audit-action@v2
               with:
                   json_flag: true
                   github_token: ${{ secrets.GITHUB_TOKEN }}
