@@ -8,7 +8,7 @@ export default function AddUser() {
     let navigate = useNavigate();
 
     // useState Hook for User
-  const [user, setUser] = useState({
+  const [notuser, setUser] = useState({
     name: "",
     username: "",
     email: "",
