@@ -66,7 +66,7 @@ jobs:
               - name: install dependencies
                 run: npm install
           
-              - name: npm audit
+              - name: retire.js
                 run: retire --outputformat json > retire.json
                 continue-on-error: true
               - uses: actions/upload-artifact@v3
