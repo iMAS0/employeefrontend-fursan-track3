@@ -44,7 +44,7 @@ jobs:
               run: npm ci
 
             - name: npm audit
-              run: npm audit --dry-run --json
+              run: npm audit --dry-run --json > audit.json
 
             - uses: actions/upload-artifact@v3
               with:
