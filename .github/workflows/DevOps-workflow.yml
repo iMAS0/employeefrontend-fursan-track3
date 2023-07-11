@@ -65,8 +65,10 @@ jobs:
               - uses: actions/checkout@v3
               - name: install dependencies
                 run: npm install
-          
-              - name: retire.js
+              - name: install retire.js
+                run: npm install -g retire
+
+              - name: run retire.js
                 run: retire --outputformat json > retire.json
                 continue-on-error: true
               - uses: actions/upload-artifact@v3
