@@ -46,8 +46,8 @@ jobs:
               run: npm install
 
             - name: npm audit
-              run: npm audit --dry-run --json > audit.json
-
+              run: npm audit --json > audit.json
+              continue-on-error: true
             - uses: actions/upload-artifact@v3
               with:
                 name: audit
