@@ -48,6 +48,11 @@ jobs:
               with:
                   json_flag: true
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+
+            - uses: actions/upload-artifact@v3
+              with:
+                name: my-audit
+                path: audit.json
             
             
 
